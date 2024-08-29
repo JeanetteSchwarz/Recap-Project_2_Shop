@@ -9,9 +9,12 @@ public class ShopService {
         this.orderRepo = orderRepo;
     }
 
-    //place new order
+    //check if product is on stock and place new order if true, send message
     public void placeNewOrder(Order order){
-        System.out.println("New Order incoming.");
+        if (productRepo.isOnStock(order.product())){
+        orderRepo.addOrder(order);
+        System.out.println("Order successful.");}
+        else System.out.println("Sorry, this product is out of stock.");
     }
 
 }

@@ -63,4 +63,9 @@ public class ProductRepo {
         }
         return null;
     }
+
+    //check if product is on stock
+    public boolean isOnStock(Product product){
+        return products.contains(product);
+    }
 }
