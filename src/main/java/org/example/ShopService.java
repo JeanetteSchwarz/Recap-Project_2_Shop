@@ -13,8 +13,17 @@ public class ShopService {
     public void placeNewOrder(Order order){
         if (productRepo.isOnStock(order.product())){
         orderRepo.addOrder(order);
-        System.out.println("Order successful.");}
+        double totalPrice = calculateTotalPrice(order, order.product());
+        System.out.println("Order successful.");
+        System.out.println("The total price of your order is: " + totalPrice);
+        }
         else System.out.println("Sorry, this product is out of stock.");
+    }
+
+    //calculate the total price of order
+    public double calculateTotalPrice(Order order, Product product) {
+        return order.orderAmount() * product.pricePerUnit();
+
     }
 
 }

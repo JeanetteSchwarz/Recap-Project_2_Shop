@@ -64,4 +64,10 @@ public class OrderListRepo implements OrderRepo{
         }
         return null;
     }
+
+    //calculate the total price of order
+    public double calculateTotalPrice(Order order, Product product){
+        return order.orderAmount() * product.pricePerUnit();
+
+    }
 }

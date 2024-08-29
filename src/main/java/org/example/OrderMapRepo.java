@@ -31,4 +31,11 @@ public class OrderMapRepo implements OrderRepo{
         return orders.values().toArray(new Order[0]);
     }
 
+    @Override
+    //calculate the total price of order
+    public double calculateTotalPrice(Order order, Product product){
+        return order.orderAmount() * product.pricePerUnit();
+
+    }
+
 }

@@ -10,4 +10,6 @@ public interface OrderRepo {
     Order getOrderById(int orderId);
 
     Order[] getOrderList();
+
+    double calculateTotalPrice(Order order, Product product);
 }
