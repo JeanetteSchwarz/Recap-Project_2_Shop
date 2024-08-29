@@ -17,8 +17,8 @@ public class OrderListRepo implements OrderRepo{
     }
 
     //get all orders
-    public List<Order> getOrderList() {
-        return orderList;
+    public Order[] getOrderList() {
+        return orderList.toArray(new Order[0]);
     }
 
     public void setOrderList(List<Order> orderList) {
@@ -56,7 +56,7 @@ public class OrderListRepo implements OrderRepo{
     }
 
     //get order by orderId
-    public Order getOrderById(double orderId){
+    public Order getOrderById(int orderId){
         for(Order foundOrder:orderList) {
             if (foundOrder.orderId() == orderId){
                 return foundOrder;

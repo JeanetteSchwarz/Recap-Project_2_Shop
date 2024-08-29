@@ -1,4 +1,4 @@
 package org.example;
 
-public record Order(double orderId, String customerName, Product product) {
+public record Order(int orderId, String customerName, Product product) {
 }

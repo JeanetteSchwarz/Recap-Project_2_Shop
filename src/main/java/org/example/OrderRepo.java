@@ -7,7 +7,7 @@ public interface OrderRepo {
 
     void removeOrder(Order order);
 
-    Order getOrderById(double orderId);
+    Order getOrderById(int orderId);
 
-    List getOrderList();
+    Order[] getOrderList();
 }
