@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class OrderListRepo {
+public class OrderListRepo implements OrderRepo{
 
     public List<Order> orderList;
 
@@ -46,17 +46,17 @@ public class OrderListRepo {
     }
 
     //add new orders
-    public void addOrders(Order order){
+    public void addOrder(Order order){
         orderList.add(order);
     }
 
     //remove order
-    public void removeOrders(Order order){
+    public void removeOrder(Order order){
         orderList.remove(order);
     }
 
     //get order by orderId
-    public Order findOrderById(double orderId){
+    public Order getOrderById(double orderId){
         for(Order foundOrder:orderList) {
             if (foundOrder.orderId() == orderId){
                 return foundOrder;
