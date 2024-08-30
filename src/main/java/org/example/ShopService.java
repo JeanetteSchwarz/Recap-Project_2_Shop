@@ -14,6 +14,8 @@ public class ShopService {
         if (productRepo.isOnStock(order.product())){
         orderRepo.addOrder(order);
         double totalPrice = calculateTotalPrice(order, order.product());
+        int newAmount = adjustStock(order, order.product());
+        order.product().withOnStock(newAmount);
         System.out.println("Order successful.");
         System.out.println("The total price of your order is: " + totalPrice);
         }
@@ -25,5 +27,12 @@ public class ShopService {
         return order.orderAmount() * product.pricePerUnit();
 
     }
+
+    //change stock after order
+    public Integer adjustStock(Order order, Product product){
+        return product.onStock() - order.orderAmount();
+    }
+
+
 
 }
