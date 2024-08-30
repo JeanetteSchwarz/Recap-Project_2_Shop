@@ -18,6 +18,7 @@ public class ShopService {
         order.product().withOnStock(newAmount);
         System.out.println("Order successful.");
         System.out.println("The total price of your order is: " + totalPrice);
+        System.out.println("New amount in stock: " + newAmount);
         }
         else System.out.println("Sorry, this product is out of stock.");
     }

@@ -42,23 +42,12 @@ public class Main {
         //find product by id
         //System.out.println(inventory.findProductById(104));
 
-        //create object stock
-        /*Stock shopStock = new Stock();
-
-        //put objects in stock
-        shopStock.addProductsToStock(cup, 24);
-        shopStock.addProductsToStock(plate, 18);
-        shopStock.addProductsToStock(bowl, 12);
-        shopStock.addProductsToStock(glas, 15);
-
-        System.out.println(shopStock);*/
-
         //check stock for single product
         System.out.println(bowl.onStock());
 
         //place order and check new stock
         shopService.placeNewOrder(irmisOrder);
-        System.out.println(bowl.onStock());
+
 
 
 
