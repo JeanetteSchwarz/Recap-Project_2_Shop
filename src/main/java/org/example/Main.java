@@ -28,16 +28,33 @@ public class Main {
 
         //create test order
         Order berndsOrder = new Order(301, "Bernd", plate, 2);
+        Order irmisOrder = new Order(302, "Irmi", bowl, 4);
 
         //placeorder trough Shopservice
         shopService.placeNewOrder(berndsOrder);
+        shopService.placeNewOrder(irmisOrder);
 
         System.out.println(allOrdersMonday);
 
         //calculate the price for Bernds order
         //System.out.println(shopService.calculateTotalPrice(berndsOrder, plate));
 
+        //find product by id
+        System.out.println(inventory.findProductById(104));
 
+        //check stock
+        System.out.println(inventory.isOnStock(bowl));
+
+        //create object stock
+        Stock shopStock = new Stock();
+
+        //put objects in stock
+        shopStock.addProductsToStock(cup, 24);
+        shopStock.addProductsToStock(plate, 18);
+        shopStock.addProductsToStock(bowl, 12);
+        shopStock.addProductsToStock(glas, 15);
+
+        System.out.println(shopStock);
 
 
 
